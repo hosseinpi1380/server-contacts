@@ -1,25 +1,36 @@
-// const { default: axios } = require("axios")
+// const { default: axios } = require("axios");
 
-// const { default: axios } = require("axios")
-
+const $ = document;
 const getData = async () => {
     try {
-        const {data}=await axios.get('https://server-contacts.onrender.com/comments')
+        const { data } = await axios.get('https://server-contacts.onrender.com/contacts')
         console.log(data)
     } catch (err) {
         console.log(err.message)
     }
 }
-getData()
-let info = { name: 'hossein', age: '22', job: "student" }
-const createData=async()=>{
-    try{
-        const data=await axios.post('https://server-contacts.onrender.com/posts',info)
+
+const createData = async () => {
+    try {
+        const { data } = await axios.post('https://server-contacts.onrender.com/contacts', contact1)
         console.log(data)
     }
-    catch(err){
+    catch (err) {
         console.log(err.message)
     }
 }
-createData()
-getData()
+let contact1 = { name: 'ali', age: '22', fname: 'bageri' }
+const deleteContact = async () => {
+    try {
+        const response = await axios.delete("https://server-contacts.onrender.com/contacts")
+        console.log(response)
+    }
+    catch (err) {
+        console.log(err.message)
+    }
+}
+deleteContact()
+const container = $.querySelector('.container')
+container.insertAdjacentHTML('afterbegin', `<div>
+hello world
+</div>`)
