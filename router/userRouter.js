@@ -23,6 +23,9 @@ userRouter.post('/contacts/newcontacts', (req, res) => {
     // data.contacts.push(req.body)
     res.send(JSON.stringify('دیتا با موفقیت ساخته شد'))
 })
+userRouter.get('/contacts',(req,res)=>{
+    res.send(JSON.stringify(db.contacts))
+})
 userRouter.get('/items', (req, res) => {
     console.log('get method')
     

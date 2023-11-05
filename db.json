@@ -6,7 +6,10 @@
             "author": "typicode"
         }
     ],
-    
-    
-    "contacts": []
+    "contacts": [
+        {
+            "name": "hossein",
+            "age": "33"
+        }
+    ]
 }
