@@ -6,5 +6,5 @@ app.use(cors())
 app.use(express.json())
 app.use('/api',userRouter)
 app.listen(5001,()=>{
-    console.log('port is running on 5000 port!')
+    console.log('port is running on 5001 port!')
 })
