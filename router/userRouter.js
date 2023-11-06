@@ -1,7 +1,5 @@
 const express = require('express');
 const userRouter = express.Router();
-const db = require('../db.json')
-
 userRouter.get('/', (req, res) => {
     console.log(req.params)
     res.send('hello world')
@@ -166,6 +164,7 @@ userRouter.post('/contacts/newContacts', (req, res) => {
         const info = req.body;
         data.contacts.push(info)
         res.send(JSON.stringify('کاربر با موفقیت ساخته شد با موفقیت ساخته شد'))
+        
     } catch (err) {
         console.log(err.message)
         res.send(JSON.stringify(Error(err.message)))
@@ -183,6 +182,7 @@ userRouter.get('/editcontacts/:id', (req, res) => {
     }
 });
 userRouter.get('/contacts', (req, res) => {
+    console.log('getting all contacts')
     res.send(JSON.stringify(data.contacts))
 });
 userRouter.get('/items', (req, res) => {
