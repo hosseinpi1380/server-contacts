@@ -34,6 +34,6 @@ const country = document.getElementById('country').value
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const data = { name, familyName, age, city, country }
-    // createData(data)
-    getData()
+    createData(data)
+    // getData()
 })
