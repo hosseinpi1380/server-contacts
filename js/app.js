@@ -1,6 +1,6 @@
 const getData = async () => {
     try {
-        const response = await axios.get('http://localhost:5001/api/contacts')
+        const response = await axios.get('https://server-sample-6hhd.onrender.com/api/contacts')
         console.log(response)
     } catch (err) {
         console.log(err.message)
@@ -9,11 +9,11 @@ const getData = async () => {
 
 const createData = async (data) => {
     try {
-        const response = await axios.post('http://localhost:5001/api/contacts/newContacts', data)
+        const response = await axios.post('https://server-sample-6hhd.onrender.com/api/contacts/create', data)
         console.log(response)
     }
     catch (err) {
-        console.log(err.message)
+        console.log(err.message,err.status)
     }
 }
 const deleteContact = async () => {
@@ -34,6 +34,6 @@ const country = document.getElementById('country').value
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const data = { name, familyName, age, city, country }
-    createData(data)
+    createData(data).then(res=>console.log(res))
     // getData()
 })
