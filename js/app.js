@@ -1,7 +1,7 @@
 const getData = async () => {
     try {
         const response = await axios.get('https://server-sample-6hhd.onrender.com/api/contacts')
-        console.log(response)
+        console.log(response.data)
     } catch (err) {
         console.log(err.message)
     }
@@ -34,6 +34,7 @@ const country = document.getElementById('country').value
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const data = { name, familyName, age, city, country }
-    createData(data).then(res=>console.log(res))
+    createData(data)
     // getData()
 })
+const buttonData=document.getElementById('element').addEventListener('click',getData)

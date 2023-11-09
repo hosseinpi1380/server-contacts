@@ -149,7 +149,6 @@ let data = {
         },
     ]
 }
-const db=require('../db.json')
 userRouter.delete('/items/:id', (req, res) => {
     try {
         const { id } = req.params;
@@ -165,7 +164,7 @@ userRouter.post('/contacts/create', (req, res) => {
         const info = req.body;
         data.contacts.push(info)
         console.log('post method')
-        res.send(JSON.stringify('کاربر با موفقیت ساخته شد با موفقیت ساخته شد'))
+        res.send(JSON.stringify(req.body))
         
     } catch (err) {
         console.log(err.message)
