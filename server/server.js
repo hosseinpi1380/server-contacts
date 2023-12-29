@@ -7,7 +7,7 @@ const cors=require('cors')
 const userRouter=require('../router/userRouter')
 const app=express();
 app.use(cors({
-  origin:'https://server-sample-6hhd.onrender.com',
+  origin:'https://server-sample-6hhd.onrender.com/api',
   headers:['Content-Type'],
   credentials:true,
 }));
