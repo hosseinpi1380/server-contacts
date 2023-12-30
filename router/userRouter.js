@@ -1,9 +1,5 @@
 const express = require('express');
 const userRouter = express.Router();
-userRouter.get('/', (req, res) => {
-    console.log(req.params)
-    res.send('hello world')
-});
 let data = {
     contacts: [
         {
@@ -148,7 +144,23 @@ let data = {
             img: "basket10.jpg",
         },
     ]
-}
+};
+//get method//
+userRouter.get('/', (req, res) => {
+    console.log(req.params)
+    res.send(JSON.stringify(data));
+});
+
+userRouter.get('/contacts', (req, res) => {
+    console.log('getting all contacts')
+    res.send(JSON.stringify(data.contacts))
+});
+userRouter.get('/items', (req, res) => {
+    console.log('get method')
+    res.send(JSON.stringify(data.baskets))
+});
+//
+//delete method//
 userRouter.delete('/items/:id', (req, res) => {
     try {
         const { id } = req.params;
@@ -182,12 +194,5 @@ userRouter.put('/edit/:id', (req, res) => {
         console.log(err.message)
     }
 });
-userRouter.get('/contacts', (req, res) => {
-    console.log('getting all contacts')
-    res.send(JSON.stringify(data.contacts))
-});
-userRouter.get('/items', (req, res) => {
-    console.log('get method')
-    res.send(JSON.stringify(data.baskets))
-});
+
 module.exports = userRouter;
