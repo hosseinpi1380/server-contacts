@@ -10,7 +10,6 @@ app.use(cors({
   origin:'http://localhost:5173',
   headers:['Content-Type'],
   credentials:true,
-  http://localhost:5173
 }));
 app.use('/api',userRouter)
 app.listen(5000, () => {
