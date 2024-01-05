@@ -7,7 +7,7 @@ const cors=require('cors')
 const userRouter=require('../router/userRouter')
 const app=express();
 app.use(cors({
-  origin:*,
+  origin:'http://localhost:3000',
   headers:['Content-Type'],
   credentials:true,
 }));
